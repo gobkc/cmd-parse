@@ -1,4 +1,4 @@
-# ginger
+# cmd-parse
 Package of command
 
 > DEMO
