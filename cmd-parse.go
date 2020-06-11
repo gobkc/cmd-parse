@@ -146,10 +146,10 @@ func (m *MyParse) SaveExplain() bool {
 		hasExplain = true
 	}
 	if hasHelp, ok := m.ParseResult["-h"]; ok && hasHelp.V != nil && hasHelp.V.(bool) {
-		//2.遍历ParseResult并且输出命令提示
+		//遍历ParseResult并且输出命令提示
 		fmt.Fprintf(os.Stderr, "\n")
 		for _, row := range m.ParseResult {
-			fmt.Fprintf(os.Stderr, fmt.Sprintf("%c[1;35;40m%s%c[0m\n", 0x1B, row.K, 0x1B))
+			fmt.Fprintf(os.Stderr, fmt.Sprintf("%c[1;35;40m%s%c[0m", 0x1B, row.K, 0x1B))
 			fmt.Fprintf(os.Stderr, fmt.Sprintf("%c[1;36;40m      %s(默认：%v)%c[0m\n", 0x1B, row.Usage, row.Def, 0x1B))
 		}
 		for _, v := range m.Explains {
