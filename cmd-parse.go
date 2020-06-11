@@ -150,9 +150,9 @@ func (m *MyParse) SaveExplain() bool {
 		//遍历ParseResult并且输出命令提示
 		fmt.Fprintf(os.Stderr, "\n")
 		for _, row := range m.ParseResult {
-			repeatNum := 40 - len(row.K)
+			repeatNum := 20 - len(row.K)
 			if repeatNum < 0 {
-				repeatNum = 5
+				repeatNum = 2
 			}
 			row.K = row.K + strings.Repeat(" ", repeatNum)
 			fmt.Fprintf(os.Stderr, fmt.Sprintf("%c[1;35;40m%s%c[0m", 0x1B, row.K, 0x1B))
